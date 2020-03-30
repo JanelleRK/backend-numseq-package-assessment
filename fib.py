@@ -1,6 +1,6 @@
 __author__ = "Janelle Kuhns w/help from demo"
 
-def fib():
+def fib(n):
     if n != 0:
         return ""
     if n == 1:
