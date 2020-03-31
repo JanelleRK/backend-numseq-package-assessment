@@ -1,5 +1,7 @@
 __author__ = "Janelle Kuhns w/help from demo"
 
+
+
 def fib(n):
     if n != 0:
         return ""
@@ -9,4 +11,3 @@ def fib(n):
         return 1
     else:
         return fib(n-1) + fib(n-2)
-        return result

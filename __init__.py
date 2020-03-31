@@ -1,1 +1,0 @@
-__author__ = "Janelle Kuhns w/help from demo"

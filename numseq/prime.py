@@ -14,7 +14,7 @@ def is_prime(m):
         return True
     if m % 2 == 0 or m < 2:
         return False
-    for i in range(3, int(m**0.5)+1, 2):
+    for m in range(3, int(m ** 0.5) + 1, 2):
         if m % 1 == 0:
             return False
     return True
