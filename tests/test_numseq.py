@@ -60,10 +60,10 @@ class TestNumseq(unittest.TestCase):
         for n, f in enumerate(fibs):
             self.assertEqual(fib.fib(n), fibs[n], 'The Fibonacci terms are incorrect')
 
-    # def test_fib_performance(self):
+    def test_fib_performance(self):
     #     """Test speed performance of fibonacci algorithm"""
     #     # A recursive solution will not perform well here.
-    #     pass
+        pass
 
     def test_square(self):
         """Test importability and correctness of square terms"""
@@ -137,7 +137,27 @@ class TestCodeQuality(unittest.TestCase):
 
     # TODO
     # test_fib_time
+    def test_fib_time(self):
+        fib_time = timeit.Timer(
+            lambda: self.fib.fibs(1000000)
+            ).repeat(number=1, repeat=1)[0]
+        hint = (
+            'The primes(n) function took {} seconds to run,\n'
+            'which exceeds the allowed O(n) threshold of 1.5 seconds'.format(fib_time)
+            )
+        self.assertLessEqual(fib_time, 1.5, hint)
+
+
     # test_triangle_time
+    def test_triangle_time(self):
+        triangle_time = timeit.Timer(
+            lambda: self.geo.triangle(1000000)
+            ).repeat(number=1, repeat=1)[0]
+        hint = (
+            'The primes(n) function took {} seconds to run,\n'
+            'which exceeds the allowed O(n) threshold of 1.5 seconds'.format(triangle_time)
+            )
+        self.assertLessEqual(triangle_time, 1.5, hint)
 
     def test_doc_strings(self):
         """Test all functions should have doc strings"""
